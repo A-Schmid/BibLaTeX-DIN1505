@@ -3,10 +3,16 @@
 % Angepasst:
 % din.bbx, v2012-06-27, Michael Domhardt
 % gekürzt nach Vorschlag von moewew vom 5. Nov. 2015, siehe: https://github.com/domhardt/BibLaTeX-DIN1505/issues/1#issuecomment-154122346
+% angepasst an den Zitierstil der Vergleichenden Kulturwissenschaft der Universität Regensburg (2022-01-05, Andreas Schmid)
 
 \ProvidesFile{din.bbx}[2015/09/06, v2015-09-06, DIN 1505 style for biblatex, Michael Domhardt]
 
 \RequireBibliographyStyle{standard}
+
+\DefineBibliographyStrings{german}{
+  editor  = {Hg\adddot},
+  editors = {Hg\adddot},
+}
 
 \setlength{\bibhang}{0em}% hängender Einzug der Bibliografie
 %\setlength{\bibitemsep}{\baselineskip}% Abstand zwischen zwei Einträgen im Literaturverzeichnis
@@ -30,7 +36,7 @@
 \DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}\midsentence}% keine Anführungszeichen dafür kursiver Titel bei Dissertationen
 
 
-\renewcommand*{\finentrypunct}{}% Punkt am Ende der Publikation entfernen
+%\renewcommand*{\finentrypunct}{}% Punkt am Ende der Publikation entfernen
 
 
 \DeclareFieldFormat{editortype}{\mkbibparens{#1}}
@@ -64,8 +70,8 @@
 
 \AtBeginBibliography{%
 %  \renewcommand*{\mkbibnamelast}[1]{\textsc{#1}}% Nachnamen bei Autoren und Herausgebern in Kapitälchen
-  \renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}% Nachnamen bei Autoren und Herausgebern in Kapitälchen
-  \renewcommand*{\multinamedelim}{\mbox{ }\addspace\addsemicolon\addspace}%  Spatium und Semikolon als Autoren- und Herausgebertrenner
+%  \renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}% Nachnamen bei Autoren und Herausgebern in Kapitälchen
+  \renewcommand*{\multinamedelim}{\addslash}%  Spatium und Semikolon als Autoren- und Herausgebertrenner
   \renewcommand*{\finalnamedelim}{\multinamedelim}%  Spatium und Semikolon als Autoren- und Herausgebertrenner
   }
 
@@ -139,7 +145,7 @@
   \newunit\newblock
   \printfield{note}%
   \newunit\newblock
-  \usebibmacro{publisher+location+date}%
+ % \usebibmacro{publisher+location+date}%
   \newunit\newblock
   \usebibmacro{chapter+pages}%
   \newunit\newblock
@@ -185,7 +191,7 @@
   \newunit\newblock
   \printfield{note}%
   \newunit\newblock
-  \usebibmacro{publisher+location+date}%
+  %\usebibmacro{publisher+location+date}%
   \newunit\newblock
   \usebibmacro{chapter+pages}%
   \newunit\newblock
@@ -237,7 +243,7 @@
   \newunit\newblock
   \printlist{organization}%
   \newunit
-  \usebibmacro{publisher+location+date}%
+  %\usebibmacro{publisher+location+date}%
   \newunit\newblock
   \usebibmacro{chapter+pages}%
   \newunit\newblock
