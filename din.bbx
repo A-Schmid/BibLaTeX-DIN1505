@@ -13,6 +13,7 @@
   editor  = {Hg\adddot},
   editors = {Hg\adddot},
   volume  = {}, % kein "Bd." vorm Band
+  %urlseen = {abgerufen am},
 }
 
 \newbibmacro*{location+year}{%
@@ -78,6 +79,7 @@
   \renewcommand*{\multinamedelim}{\addslash}%  Spatium und Semikolon als Autoren- und Herausgebertrenner
   \renewcommand*{\finalnamedelim}{\multinamedelim}%  Spatium und Semikolon als Autoren- und Herausgebertrenner
   }
+\DeclareFieldFormat{url}{\url{#1}} % kein 'URL' vor URLs
 
 % zusätzlicher Eintragstyp @standard
 % geändert von @misc
