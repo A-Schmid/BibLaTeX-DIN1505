@@ -100,7 +100,6 @@
   \renewcommand*{\multinamedelim}{\addslash}%  Spatium und Semikolon als Autoren- und Herausgebertrenner
   \renewcommand*{\finalnamedelim}{\multinamedelim}%  Spatium und Semikolon als Autoren- und Herausgebertrenner
   }
-\DeclareFieldFormat{url}{\url{#1}} % kein 'URL' vor URLs
 
 % zusätzlicher Eintragstyp @standard
 % geändert von @misc
@@ -315,9 +314,9 @@
   \setunit{\addspace}%
   \usebibmacro{issue+date}%
   \setunit{\addspace}%
-  \printfield{number}%
-  \setunit{\addcomma\space}%
-  \printfield{eid}%
+  %\printfield{number}%
+  %\setunit{\addcomma\space}%
+  %\printfield{eid}%
 %  \usebibmacro{volume+number+eid}%
 %  \setunit{\addspace}%
 %  \usebibmacro{issue+date}%
