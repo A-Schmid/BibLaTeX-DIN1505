@@ -9,11 +9,15 @@
 
 \RequireBibliographyStyle{standard}
 
+\NewBibliographyString{foundat}
+\DefineBibliographyStrings{english}{foundat={at\addcolon\addspace},}
+
 \DefineBibliographyStrings{german}{
   editor  = {Hg\adddot},
   editors = {Hg\adddot},
   volume  = {}, % kein "Bd." vorm Band
   %urlseen = {abgerufen am},
+  foundat = {Auf\addcolon\addspace},
 }
 
 \newbibmacro*{location+year}{%
@@ -21,6 +25,20 @@
   \setunit*{\space}%
   \usebibmacro{date}%
   \newunit}
+
+\DeclareFieldFormat{url}{\url{#1}} % kein 'URL' vor URLs
+\DeclareFieldFormat{urldate}{\bibstring{urlseen}\space#1}
+
+\newbibmacro*{websitename}{
+    \newunit
+    %\printtext{Auf\addcolon}
+    \bibstring{foundat}
+    \newunit
+    \usebibmacro{journal}
+    \newunit
+    \setunit*{} % sonst ist ein Punkt und ein Leerzeichen vor der URL
+    \mkbibparens{\printfield{url}\addcomma\addspace\usebibmacro{urldate}}
+}
 
 \setlength{\bibhang}{0em}% hängender Einzug der Bibliografie
 %\setlength{\bibitemsep}{\baselineskip}% Abstand zwischen zwei Einträgen im Literaturverzeichnis
