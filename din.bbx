@@ -66,6 +66,9 @@
 
 
 \DeclareFieldFormat{editortype}{\mkbibparens{#1}}
+\DeclareFieldFormat*{title}{\textit{#1}}
+\DeclareFieldFormat{title}{\textit{#1}}
+\DeclareFieldFormat{citetitle}{\textit{#1}}
 
 \renewbibmacro*{editor}{% Komma vor Herausgeberk�rzel entfernen
   \ifboolexpr{
